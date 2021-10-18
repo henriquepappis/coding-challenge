@@ -1,0 +1,31 @@
+version: "3.5"
+
+services:
+  challenge_app:
+    container_name: challenge_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../:/var/www/html
+    command: php -S 0.0.0.0:8000 -t public
+    restart: unless-stopped
+    depends_on:
+      - challenge_db
+
+  challenge_db:
+    container_name: challenge_db
+    image: mysql:8.0
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:33060"
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./database/mysql-data:/var/lib/mysql:rw
