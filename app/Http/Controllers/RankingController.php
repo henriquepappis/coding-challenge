@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movement;
 use App\Models\PersonalRecord;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -63,15 +64,20 @@ class RankingController extends Controller
 
             $prev_value = $personal_record['value'];
             $rank++;
+
+            $records[] = [
+                'user' => User::find($personal_record['user_id'])->name,
+                'value' => $personal_record['value'],
+                'position' => $personal_records[$key]['position'],
+                'date' => Carbon::parse($personal_record['date'])->format('d/m/Y')
+            ];
         }
 
-        print_r($personal_records);
-        die;
         $ranking = [
             'movement_name' => $movement->name,
-            'records' => $personal_records
+            'records' => $records
         ];
 
-        // return $ranking;
+        return $ranking;
     }
 }
