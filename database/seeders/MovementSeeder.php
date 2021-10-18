@@ -15,9 +15,10 @@ class MovementSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('personal_record')->delete();
         DB::table('movement')->delete();
 
-        DB::table('movement')->insert(
+        $movement = [
             [
                 'id' => 1,
                 'name' => 'Deadlift',
@@ -30,6 +31,8 @@ class MovementSeeder extends Seeder
                 'id' => 3,
                 'name' => 'Bench Press'
             ]
-        );
+            ];
+
+        DB::table('movement')->insert($movement);
     }
 }

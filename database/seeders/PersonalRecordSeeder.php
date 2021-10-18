@@ -16,7 +16,7 @@ class PersonalRecordSeeder extends Seeder
     {
         DB::table('personal_record')->delete();
 
-        DB::table('personal_record')->insert(
+        $personal_record = [
             ['id' => 1, 'user_id' => 1, 'movement_id' => 1, 'value' => 100.0, 'date' =>'2021-01-01 00:00:00.0'],
             ['id' => 2, 'user_id' => 1, 'movement_id' => 1, 'value' => 180.0, 'date' =>'2021-01-02 00:00:00.0'],
             ['id' => 3, 'user_id' => 1, 'movement_id' => 1, 'value' => 150.0, 'date' =>'2021-01-03 00:00:00.0'],
@@ -34,6 +34,8 @@ class PersonalRecordSeeder extends Seeder
             ['id' => 15, 'user_id' => 1, 'movement_id' => 2, 'value' => 100.0, 'date' => '2021-01-01 00:00:00.0'],
             ['id' => 16, 'user_id' => 2, 'movement_id' => 2, 'value' => 120.0, 'date' => '2021-01-01 00:00:00.0'],
             ['id' => 17, 'user_id' => 3, 'movement_id' => 2, 'value' => 120.0, 'date' => '2021-01-01 00:00:00.0']
-        );
+        ];
+
+        DB::table('personal_record')->insert($personal_record);
     }
 }

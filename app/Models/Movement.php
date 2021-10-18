@@ -13,6 +13,8 @@ class Movement extends Model implements AuthenticatableContract, AuthorizableCon
 {
     use Authenticatable, Authorizable, HasFactory;
 
+    protected $table = 'movement';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,4 +23,5 @@ class Movement extends Model implements AuthenticatableContract, AuthorizableCon
     protected $fillable = [
         'name',
     ];
+
 }

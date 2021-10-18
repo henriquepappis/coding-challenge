@@ -14,9 +14,10 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('personal_record')->delete();
         DB::table('user')->delete();
 
-        DB::table('user')->insert(
+        $users = [
             [
                 'id' => 1,
                 'name' =>   'Joao',
@@ -29,6 +30,8 @@ class UserSeeder extends Seeder
                 'id' => 3,
                 'name' =>   'Paulo',
             ]
-        );
+        ];
+
+        DB::table('user')->insert($users);
     }
 }

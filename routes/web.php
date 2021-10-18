@@ -15,15 +15,10 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-// $router->get('/', function () use ($router) {
-//     echo $router->app->version();
-//     dd(DB::getPDO());
-// });
-
-
 $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->get('/', function () use ($router) {
         return $router->app->version();
-        dd(DB::getPDO());
     });
+
+    $router->get('/ranking', 'RankingController@getRanking');
 });
