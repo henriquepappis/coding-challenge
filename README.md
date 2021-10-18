@@ -1,24 +1,28 @@
-# Lumen PHP Framework
+# Coding-Challenge
+Retornar o ranking de um determinado movimento, trazendo o nome do movimento e uma lista ordenada com os usuários, seu respectivo recorde pessoal (maior valor), posição e data.
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+# Tabela de conteudos
+<!--ts-->
+   * [Coding-Challenge](#coding-challenge)
+   * [Tabela de Conteudo](#tabela-de-conteudos)
+   * [Instalação](#instalação)
+   * [Como usar](#como-usar)
+   * [Testes](#testes)
+   * [Tecnologias utilizadas](#tecnologias-utilizadas)
+<!--te-->
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Instalação
+- Clone este projeto `git clone https://github.com/henriquepappis/coding-challenge.git`
+- Acesse via terminal a pasta docker e rode o seguinte comando:
+`docker-compose --env-file ../.env up --build -d`
+# Como usar
+ - Importe a collection para o postman `https://www.getpostman.com/collections/e83ff8fe24caf6caa333`
+# Testes
+- Para rodar os testes abra o terminal, acesse o container challenge-app `docker exec -it challenge_app sh` e rode o comando `composer test`.
+## Tecnologias utilizadas
+- Docker
+- PHP 7.3
+- MySQL 8.0
+- Lumen Framework
+- PHPUnit
+- Eloquent ORM
